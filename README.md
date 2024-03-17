@@ -1,22 +1,22 @@
 Deploying a two-tier application with Docker-compose involves defining a YAML file to specify the services, networks, and volumes for a multi-container application. It simplifies the deployment of front-end and back-end components, enabling efficient scaling and orchestration of containers. Docker-compose streamlines the setup, configuration, and interconnection of these components, making it easier to manage and run the application.
 
-Update the System & Install Docker.
+##Update the System & Install Docker.
 ```bash
 sudo apt-get update # Update the System
 sudp apt-get install docker.io # Install Docker
 ```
 
-Add the current user to docker group
+##Add the current user to docker group
 ```bash
 sudo usermod -aG docker $USER
 ```
 
-Clone the source-code repository url from GitHub. 
+##Clone the source-code repository url from GitHub. 
 ```bash
 https://github.com/CloudOpsRahul/Docker-Project.git
 ```
 
-Make Dockerfile.
+##Make Dockerfile.
 ```bash
 # Use an official Python runtime as the base image
 FROM python:3.9-slim
@@ -44,18 +44,18 @@ COPY . .
 CMD ["python", "app.py"]
 
 ```
-Create a Docker image  from Dockerfile 
+##Create a Docker image  from Dockerfile 
 ```bash
 docker build -t flaskapp:latest .
 ```
-Now, go to your EC2 instance security group open port no. 5000 & save it.
+##Now, go to your EC2 instance security group open port no. 5000 & save it.
 
-If you want to run both containers in one command - flaskapp, mysql.
-Install docker-compose.
+##If you want to run both containers in one command - flaskapp, mysql.
+##Install docker-compose.
 ```bash
 sudo apt-get install docker-compose -y
 ```
-Make docker-compose.yml file.
+##Make docker-compose.yml file.
 ```bash
 version: '3'
 services:
@@ -95,4 +95,4 @@ docker-compose up -d  # it creates network automatically.
 docker-compose down   # it down the access
 ```
 
-Finally, access your flask app -> publicip:5000
+##Finally, access your flask app -> publicip:5000
