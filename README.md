@@ -9,4 +9,4 @@ docker build -t flaskapp:latest .
 Following is the command to run the multiple containers by docker-compose.
 docker-compose up -d
 
-Then we can check if application is running or not by public IP of EC2 instance followed by port number
+Then we can check if application is running or not by public IP of EC2 instance followed by port number.
