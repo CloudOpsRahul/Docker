@@ -8,6 +8,7 @@ Add the current user to docker group
 sudo usermod -aG docker $USER
 
 Make Dockerfile.
+--bash
 # Use an official Python runtime as the base image
 FROM python:3.9-slim
 
@@ -33,6 +34,7 @@ COPY . .
 # Specify the command to run your application
 CMD ["python", "app.py"]
 
+---
 
 
 Clone the source-code repository url from GitHub. 
